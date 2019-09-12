@@ -17,7 +17,7 @@
     <br>
     <textarea name="details" id="" cols="30" rows="10" placeholder="Details"></textarea>
     <br>
-    <button>Submit</button>
+    <button>Save</button>
 </form>
 
 </body>

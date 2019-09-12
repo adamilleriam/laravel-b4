@@ -9,17 +9,24 @@
 </head>
 <body>
 <h1>List of posts</h1>
+<a href="<?php echo url('post/create') ?>">Create new post</a>
+<br>
+<br>
 <table border="1">
     <tr>
         <th>Id</th>
         <th>Title</th>
         <th>Details</th>
+        <th>Action</th>
     </tr>
     <?php foreach ($posts as $post){ ?>
         <tr>
             <td><?php echo $post->id ?></td>
             <td><?php echo $post->title ?></td>
             <td><?php echo $post->details ?></td>
+            <td>
+                <a href="<?php echo url('post/edit',$post->id) ?>">Edit</a>
+            </td>
         </tr>
     <?php } ?>
 </table>
