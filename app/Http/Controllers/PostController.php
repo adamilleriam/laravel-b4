@@ -36,4 +36,9 @@ class PostController extends Controller
         DB::table('posts')->where('id',$id)->update($data);
         return redirect('posts');
     }
+    public function destory($id)
+    {
+        DB::table('posts')->where('id',$id)->delete();
+        return redirect('posts');
+    }
 }
