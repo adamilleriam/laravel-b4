@@ -27,3 +27,4 @@ Route::get('comment/create','CommentController@create');
 Route::post('comment/store','CommentController@store');
 Route::get('comment/edit/{id}','CommentController@edit');
 Route::put('comment/update/{id}','CommentController@update');
+Route::delete('comment/delete/{id}','CommentController@destroy');

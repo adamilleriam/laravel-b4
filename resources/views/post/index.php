@@ -10,7 +10,8 @@
 <body>
 <h1>List of posts</h1>
 <a href="<?php echo url('post/create') ?>">Create new post</a>
-<a href="<?php echo url('comment/create') ?>">Add new Comment</a>
+||
+<a href="<?php echo url('comments') ?>">Comments</a>
 <br>
 <br>
 <table border="1">

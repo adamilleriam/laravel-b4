@@ -35,4 +35,9 @@ class CommentController extends Controller
         Comment::findOrFail($id)->update($data);
         return redirect('comments');
     }
+    public function destroy($id)
+    {
+        Comment::destroy($id);
+        return redirect('comments');
+    }
 }
