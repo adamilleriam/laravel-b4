@@ -9,9 +9,9 @@
 </head>
 <body>
 <h1>List of posts</h1>
-<a href="<?php echo url('post/create') ?>">Create new post</a>
+<a href="{{ url('post/create') }}">Create new post</a>
 ||
-<a href="<?php echo url('comments') ?>">Comments</a>
+<a href="{{ url('comments') }}">Comments</a>
 <br>
 <br>
 <table border="1">
@@ -21,21 +21,21 @@
         <th>Details</th>
         <th>Action</th>
     </tr>
-    <?php foreach ($posts as $post){ ?>
+    @foreach ($posts as $post)
         <tr>
-            <td><?php echo $post->id ?></td>
-            <td><?php echo $post->title ?></td>
-            <td><?php echo $post->details ?></td>
+            <td>{{ $post->id }}</td>
+            <td>{{ $post->title }}</td>
+            <td>{{ $post->details }}</td>
             <td>
-                <a href="<?php echo url('post/edit',$post->id) ?>">Edit</a>
-                <form action="<?php echo url('post/delete',$post->id) ?>" method="post">
-                    <?php echo csrf_field() ?>
-                    <input type="hidden" name="_method" value="delete">
+                <a href="{{ url('post/edit',$post->id) }}">Edit</a>
+                <form action="{{ url('post/delete',$post->id) }}" method="post">
+                    @csrf
+                    @method('delete')
                     <button>Delete</button>
                 </form>
             </td>
         </tr>
-    <?php } ?>
+    @endforeach
 </table>
 </body>
 </html>

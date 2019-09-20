@@ -10,8 +10,8 @@
 <body>
 
     <h1>Create new post</h1>
-<form action="<?php echo url('post/store') ?>" method="post">
-    <?php echo csrf_field(); ?>
+<form action="{{ url('post/store') }}" method="post">
+    @csrf
     <input type="text" name="title" placeholder="Title">
     <br>
     <br>
