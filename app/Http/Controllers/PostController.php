@@ -10,11 +10,11 @@ class PostController extends Controller
     public function index()
     {
         $data['posts'] = DB::table('posts')->get();
-        return view('post/index',$data);
+        return view('post.index',$data);
     }
     public function create()
     {
-        return view('post/create');
+        return view('post.create');
     }
     public function store(Request $request)
     {
@@ -27,7 +27,7 @@ class PostController extends Controller
     {
         $data['post'] = DB::table('posts')->where('id',$id)->first();
 
-        return view('post/edit',$data);
+        return view('post.edit',$data);
     }
     public function update(Request $request,$id)
     {

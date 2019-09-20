@@ -10,11 +10,11 @@ class CommentController extends Controller
 {
     public function index(){
         $data['comments'] = Comment::all();
-        return view('comment/index',$data);
+        return view('comment.index',$data);
     }
     public function create()
     {
-        return view('comment/create');
+        return view('comment.create');
     }
     public function store(Request $request)
     {
@@ -26,7 +26,7 @@ class CommentController extends Controller
     public function edit($id)
     {
         $data['comment'] = Comment::findOrFail($id);
-        return view('comment/edit',$data);
+        return view('comment.edit',$data);
     }
     public function update(Request $request,$id)
     {
