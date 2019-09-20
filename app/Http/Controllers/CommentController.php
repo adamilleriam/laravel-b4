@@ -21,7 +21,7 @@ class CommentController extends Controller
         $data['post_id'] = $request->post_id;
         $data['comment'] = $request->comment;
         Comment::create($data);
-        return redirect('comments');
+        return redirect()->route('comment.index');
     }
     public function edit($id)
     {
@@ -33,11 +33,11 @@ class CommentController extends Controller
         $data['post_id'] = $request->post_id;
         $data['comment'] = $request->comment;
         Comment::findOrFail($id)->update($data);
-        return redirect('comments');
+        return redirect()->route('comment.index');
     }
     public function destroy($id)
     {
         Comment::destroy($id);
-        return redirect('comments');
+        return redirect()->route('comment.index');
     }
 }

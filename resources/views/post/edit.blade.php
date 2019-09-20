@@ -2,7 +2,7 @@
 @section('title','Edit Post')
 @section('content')
     <h1>Update post</h1>
-    <form action="{{ url('post/update',$post->id) }}" method="post">
+    <form action="{{ route('post.update',$post->id) }}" method="post">
         @csrf
         @method('put')
         <input type="text" name="title" value="{{ $post->title }}" placeholder="Title">

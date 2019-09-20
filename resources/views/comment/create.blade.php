@@ -2,7 +2,7 @@
 @section('title','Create new comment')
 @section('content')
     <h1>Create new comment</h1>
-    <form action="{{ url('comment/store') }}" method="post">
+    <form action="{{ route('comment.store') }}" method="post">
         @csrf
         <input type="number" name="post_id" min="1" required placeholder="Enter post id here">
         <br>

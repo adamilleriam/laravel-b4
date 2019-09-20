@@ -21,7 +21,7 @@ class PostController extends Controller
         $data['title'] = $request->title;
         $data['details'] = $request->details;
         DB::table('posts')->insert($data);
-        return redirect('posts');
+        return redirect()->route('post.index');
     }
     public function edit($id)
     {
@@ -34,11 +34,11 @@ class PostController extends Controller
         $data['title'] = $request->title;
         $data['details'] = $request->details;
         DB::table('posts')->where('id',$id)->update($data);
-        return redirect('posts');
+        return redirect()->route('post.index');
     }
     public function destory($id)
     {
         DB::table('posts')->where('id',$id)->delete();
-        return redirect('posts');
+        return redirect()->route('post.index');
     }
 }
