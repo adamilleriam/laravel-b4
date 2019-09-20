@@ -9,8 +9,8 @@
 </head>
 <body>
 <h1>Create new comment</h1>
-<form action="<?php echo url('comment/store') ?>" method="post">
-    <?php echo csrf_field() ?>
+<form action="{{ url('comment/store') }}" method="post">
+    @csrf
     <input type="number" name="post_id" min="1" required placeholder="Enter post id here">
     <br>
     <br>
